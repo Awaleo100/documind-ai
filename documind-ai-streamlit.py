@@ -5,9 +5,9 @@ import PyPDF2
 import docx2txt
 
 # Set your OpenAI API key (replace with your actual key or use env variables)
-openai.api_key = "YOUR_OPENAI_API_KEY"
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-st.title("📄 DocuMind AI - Document Q&A Assistant")
+st.title("ðŸ“„ DocuMind AI - Document Q&A Assistant")
 
 uploaded_file = st.file_uploader("Upload a document (PDF or DOCX)", type=["pdf", "docx"])
 
@@ -49,12 +49,13 @@ if uploaded_file and question:
         text = ""
 
     if text:
-        prompt = f"The following is a document:
+        prompt = f"""The following is a document:
 
 {text}
 
 Answer this question based on it:
-{question}"
+{question}
+"""
         answer = ask_gpt(prompt)
-        st.markdown("### ✅ Answer:")
+        st.markdown("### âœ… Answer:")
         st.write(answer)
