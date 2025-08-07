@@ -5,7 +5,7 @@ import PyPDF2
 import docx2txt
 
 # Set your OpenAI API key (replace with your actual key or use env variables)
-openai.api_key = st.secrets["OPENAI_API_KEY"]
+openai.api_key = "ssk-proj-FUGILtun4AttAhJD-RvK7sYRZV1-KrS9vprfZDFmTiMusI1zpaZ0yTps26BBFLHYgVK3rmliO6T3BlbkFJrw7oz0kNQUQL1ilIVYS3dl8MJhy8wjGcZawtNIEQLWe1bjVmZ8TPGt86hRsnwAz_0BfhALQqcA"
 
 st.title("ðŸ“„ DocuMind AI - Document Q&A Assistant")
 
