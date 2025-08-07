@@ -1,12 +1,11 @@
 
 import streamlit as st
-import openai
+from openai import OpenAI
 import PyPDF2
 import docx2txt
 
 # Set your OpenAI API key (replace with your actual key or use env variables)
 openai.api_key = "ssk-proj-FUGILtun4AttAhJD-RvK7sYRZV1-KrS9vprfZDFmTiMusI1zpaZ0yTps26BBFLHYgVK3rmliO6T3BlbkFJrw7oz0kNQUQL1ilIVYS3dl8MJhy8wjGcZawtNIEQLWe1bjVmZ8TPGt86hRsnwAz_0BfhALQqcA"
-
 st.title("ðŸ“„ DocuMind AI - Document Q&A Assistant")
 
 uploaded_file = st.file_uploader("Upload a document (PDF or DOCX)", type=["pdf", "docx"])
@@ -26,7 +25,7 @@ def extract_text_from_docx(file):
 def ask_gpt(prompt):
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-4",
+            model="gpt-3.5-turbo",  # or gpt-4",
             messages=[
                 {"role": "system", "content": "You are an expert legal document assistant."},
                 {"role": "user", "content": prompt}
