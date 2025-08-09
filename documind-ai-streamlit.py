@@ -2,7 +2,7 @@ import streamlit as st
 import tempfile
 import PyPDF2
 import docx2txt
-from groq import Groq
+import groq 
 
 # Initialize Groq client
 client = Groq(api_key=st.secrets["GROQ_API_KEY"])
